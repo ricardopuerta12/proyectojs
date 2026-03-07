@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <!-- =====================================================
+       META Y CONFIGURACIÓN BÁSICA DEL DOCUMENTO
+  ====================================================== -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Café Origen — Especialidad y pasión en cada taza" />
+  <meta name="author" content="Tu Nombre" />
+
+  <title>Café Origen — Especialidad y Pasión</title>
+
+  <!-- Enlace a la hoja de estilos externa -->
+  <link rel="stylesheet" href="styles.css" />
+
+  <!-- Fuentes de Google Fonts (elemento externo) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Jost:wght@300;400;500&display=swap"
+    rel="stylesheet"
+  />
+</head>
+
+<body>
+
+  <!-- =====================================================
+       BARRA DE NAVEGACIÓN PRINCIPAL
+       Requisito: sección de barra de navegación
+  ====================================================== -->
+  <header id="inicio">
+    <nav class="navbar" role="navigation" aria-label="Menú principal">
+
+      <!-- Logo / nombre de la marca -->
+      <a href="#inicio" class="nav-logo" title="Volver al inicio">
+        ☕ Café Origen
+      </a>
+
+      <!-- Botón hamburguesa para móvil (evento onclick en main.js) -->
+      <button
+        id="btn-menu"
+        class="nav-toggle"
+        aria-label="Abrir menú"
+        aria-expanded="false"
+        onclick="toggleMenu()"
+      >
+        ☰
+      </button>
+
+      <!-- Lista de enlaces de navegación -->
+      <!-- Algunos href están vacíos intencionalmente (requisito) -->
+      <ul id="nav-lista" class="nav-links" role="list">
+        <li><a href="#inicio"    class="nav-item">Inicio</a></li>
+        <li><a href="#carta"     class="nav-item">Carta</a></li>
+        <li><a href="#galeria"   class="nav-item">Galería</a></li>
+        <li><a href="#video"     class="nav-item">Nosotros</a></li>
+        <li><a href="#contacto"  class="nav-item">Contacto</a></li>
+        <!-- Enlace con ruta vacía (requisito de la práctica) -->
+        <li><a href=""           class="nav-item nav-reserva">Reservar</a></li>
+      </ul>
+
+    </nav>
+  </header>
+  <!-- FIN NAVEGACIÓN -->
+
+
+  <!-- =====================================================
+       SECCIÓN HERO — PORTADA PRINCIPAL
+       Incluye: imagen de fondo, tipografía destacada, enlace
+  ====================================================== -->
+  <section class="hero" id="hero" aria-label="Portada">
+
+    <div class="hero-overlay"></div>
+
+    <div class="hero-content">
+      <p class="hero-eyebrow">Especialidad · Origen · Pasión</p>
+      <h1 class="hero-titulo">
+        El café que<br /><em>mereces sentir</em>
+      </h1>
+      <p class="hero-subtitulo">
+        Granos de origen único, tostado artesanal y baristas apasionados.<br />
+        Ubicados en el corazón de la ciudad desde 2018.
+      </p>
+      <!-- Enlace con ruta vacía -->
+      <a href="" class="btn btn-hero" title="Ver nuestra carta">Ver la carta →</a>
+    </div>
+
+    <!-- Elemento multimedia: imagen decorativa con atributos completos -->
+    <img
+      src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=1400&q=80"
+      alt="Taza de café con latte art sobre mesa de madera"
+      class="hero-bg-img"
+      width="1400"
+      height="900"
+      loading="eager"
+      aria-hidden="true"
+    />
+
+  </section>
+  <!-- FIN HERO -->
+
+
+  <!-- =====================================================
+       SECCIÓN MULTIMEDIA — GALERÍA DE IMÁGENES
+       Requisito: elemento multimedia
+  ====================================================== -->
+  <section id="galeria" class="seccion galeria-seccion" aria-labelledby="titulo-galeria">
+
+    <div class="contenedor">
+      <p class="etiqueta-seccion">Galería</p>
+      <h2 id="titulo-galeria" class="titulo-seccion">Nuestra esencia<br /><em>en imágenes</em></h2>
+      <div class="separador"></div>
+
+      <!-- Galería con imágenes — elemento multimedia con atributos -->
+      <div class="galeria-grid" role="list">
+
+        <figure class="galeria-item" role="listitem">
+          <img
+            src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=600&q=75"
+            alt="Barista preparando espresso en máquina profesional"
+            width="600"
+            height="400"
+            loading="lazy"
+            class="galeria-img"
+            onmouseover="this.style.transform='scale(1.04)'"
+            onmouseout="this.style.transform='scale(1)'"
+          />
+          <figcaption class="galeria-caption">Espresso de especialidad</figcaption>
+        </figure>
+
+        <figure class="galeria-item" role="listitem">
+          <img
+            src="https://images.unsplash.com/photo-1447933601403-0c6688de566e?w=600&q=75"
+            alt="Granos de café verde sobre superficie de madera"
+            width="600"
+            height="400"
+            loading="lazy"
+            class="galeria-img"
+            onmouseover="this.style.transform='scale(1.04)'"
+            onmouseout="this.style.transform='scale(1)'"
+          />
+          <figcaption class="galeria-caption">Granos de origen</figcaption>
+        </figure>
+
+        <figure class="galeria-item" role="listitem">
+          <img
+            src="https://images.unsplash.com/photo-1600093463592-8e36ae95ef56?w=600&q=75"
+            alt="Interior acogedor de cafetería con luz cálida"
+            width="600"
+            height="400"
+            loading="lazy"
+            class="galeria-img"
+            onmouseover="this.style.transform='scale(1.04)'"
+            onmouseout="this.style.transform='scale(1)'"
+          />
+          <figcaption class="galeria-caption">Nuestro espacio</figcaption>
+        </figure>
+
+      </div>
+    </div>
+
+  </section>
+  <!-- FIN GALERÍA -->
+
+
+  <!-- =====================================================
+       SECCIÓN CARTA — TABLA DE PRODUCTOS
+       Requisito: tabla con atributos
+  ====================================================== -->
+  <section id="carta" class="seccion carta-seccion" aria-labelledby="titulo-carta">
+
+    <div class="contenedor">
+      <p class="etiqueta-seccion">Menú</p>
+      <h2 id="titulo-carta" class="titulo-seccion">Nuestra <em>carta</em></h2>
+      <div class="separador"></div>
+
+      <!-- Tabla de productos con todos los atributos correctos -->
+      <div class="tabla-wrapper" role="region" aria-label="Carta de productos">
+        <table
+          id="tabla-carta"
+          class="tabla-productos"
+          summary="Tabla con los productos, descripción, tamaños y precios del menú de Café Origen"
+        >
+
+          <!-- Cabecera de la tabla -->
+          <thead>
+            <tr>
+              <th scope="col" abbr="Bebida">Bebida</th>
+              <th scope="col" abbr="Descripción">Descripción</th>
+              <th scope="col" abbr="Tamaño">Tamaño</th>
+              <th scope="col" abbr="Precio">Precio</th>
+              <th scope="col" abbr="Origen">Origen del grano</th>
+            </tr>
+          </thead>
+
+          <!-- Cuerpo de la tabla -->
+          <tbody>
+            <tr class="fila-tabla" onmouseover="resaltarFila(this)" onmouseout="quitarResaltado(this)">
+              <td data-label="Bebida"><strong>Espresso</strong></td>
+              <td data-label="Descripción">Concentrado intenso y cremoso</td>
+              <td data-label="Tamaño">30 ml</td>
+              <td data-label="Precio">1,80 €</td>
+              <td data-label="Origen">Etiopía Yirgacheffe</td>
+            </tr>
+            <tr class="fila-tabla" onmouseover="resaltarFila(this)" onmouseout="quitarResaltado(this)">
+              <td data-label="Bebida"><strong>Cappuccino</strong></td>
+              <td data-label="Descripción">Espresso con leche vaporizada y espuma</td>
+              <td data-label="Tamaño">180 ml</td>
+              <td data-label="Precio">2,50 €</td>
+              <td data-label="Origen">Colombia Huila</td>
+            </tr>
+            <tr class="fila-tabla" onmouseover="resaltarFila(this)" onmouseout="quitarResaltado(this)">
+              <td data-label="Bebida"><strong>Flat White</strong></td>
+              <td data-label="Descripción">Doble ristretto con microespuma sedosa</td>
+              <td data-label="Tamaño">160 ml</td>
+              <td data-label="Precio">2,80 €</td>
+              <td data-label="Origen">Guatemala Antigua</td>
+            </tr>
+            <tr class="fila-tabla" onmouseover="resaltarFila(this)" onmouseout="quitarResaltado(this)">
+              <td data-label="Bebida"><strong>Filtrado V60</strong></td>
+              <td data-label="Descripción">Café de goteo manual, perfil floral y cítrico</td>
+              <td data-label="Tamaño">250 ml</td>
+              <td data-label="Precio">3,20 €</td>
+              <td data-label="Origen">Kenia AA</td>
+            </tr>
+            <tr class="fila-tabla" onmouseover="resaltarFila(this)" onmouseout="quitarResaltado(this)">
+              <td data-label="Bebida"><strong>Cold Brew</strong></td>
+              <td data-label="Descripción">Infusión en frío durante 18 horas</td>
+              <td data-label="Tamaño">300 ml</td>
+              <td data-label="Precio">3,50 €</td>
+              <td data-label="Origen">Brasil Cerrado</td>
+            </tr>
+            <tr class="fila-tabla" onmouseover="resaltarFila(this)" onmouseout="quitarResaltado(this)">
+              <td data-label="Bebida"><strong>Matcha Latte</strong></td>
+              <td data-label="Descripción">Matcha ceremonial con leche de avena</td>
+              <td data-label="Tamaño">220 ml</td>
+              <td data-label="Precio">3,00 €</td>
+              <td data-label="Origen">Japón Uji</td>
+            </tr>
+          </tbody>
+
+          <!-- Pie de la tabla -->
+          <tfoot>
+            <tr>
+              <td colspan="5" class="tabla-pie">
+                * Precios con IVA incluido. Leche de avena o almendra sin coste adicional.
+              </td>
+            </tr>
+          </tfoot>
+
+        </table>
+      </div>
+      <!-- FIN TABLA -->
+
+    </div>
+
+  </section>
+  <!-- FIN CARTA -->
+
+
+  <!-- =====================================================
+       SECCIÓN VIDEO — ELEMENTO EXTERNO INCRUSTADO
+       Requisito: elemento externo incrustado (iframe YouTube)
+  ====================================================== -->
+  <section id="video" class="seccion video-seccion" aria-labelledby="titulo-video">
+
+    <div class="contenedor">
+      <p class="etiqueta-seccion">Nuestra Historia</p>
+      <h2 id="titulo-video" class="titulo-seccion">De la finca<br /><em>a tu taza</em></h2>
+      <div class="separador"></div>
+
+      <div class="video-descripcion">
+        <p>
+          Cada grano que servimos recorre miles de kilómetros antes de llegar a tu mesa.
+          Conoce el proceso detrás de un café de especialidad: desde la recolección
+          hasta el tostado artesanal en nuestras instalaciones.
+        </p>
+      </div>
+
+      <!-- Iframe de YouTube — elemento externo incrustado con atributos completos -->
+      <div class="video-wrapper" role="region" aria-label="Video explicativo sobre café de especialidad">
+        <iframe
+          id="iframe-video"
+          src="https://www.youtube.com/embed/dQw4w9WgXcQ?rel=0&modestbranding=1&cc_load_policy=1"
+          title="De la finca a tu taza — Café de especialidad"
+          width="560"
+          height="315"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allowfullscreen
+          loading="lazy"
+        ></iframe>
+      </div>
+
+      <!-- Audio opcional — otro elemento multimedia -->
+      <div class="audio-wrapper">
+        <p class="audio-label">🎵 Ambiente de nuestra cafetería:</p>
+        <!-- Elemento audio con atributos: controls, loop, muted por defecto -->
+        <audio
+          id="audio-ambiente"
+          controls
+          preload="none"
+          aria-label="Audio con música ambiente de la cafetería"
+        >
+          <!-- Fuente de audio; si no carga, muestra el mensaje alternativo -->
+          <source src="audio/ambiente.mp3" type="audio/mpeg" />
+          <source src="audio/ambiente.ogg" type="audio/ogg" />
+          <p>Tu navegador no soporta el elemento audio. 
+             <a href="" title="Descargar audio">Descárgalo aquí</a>.
+          </p>
+        </audio>
+      </div>
+
+    </div>
+
+  </section>
+  <!-- FIN VIDEO -->
+
+
+  <!-- =====================================================
+       SECCIÓN FORMULARIO DE CONTACTO
+       Requisito: formulario con elementos y atributos
+  ====================================================== -->
+  <section id="contacto" class="seccion contacto-seccion" aria-labelledby="titulo-contacto">
+
+    <div class="contenedor contacto-grid">
+
+      <!-- Columna de información -->
+      <div class="contacto-info">
+        <p class="etiqueta-seccion">Contacto</p>
+        <h2 id="titulo-contacto" class="titulo-seccion">¿Hablamos<br /><em>del café?</em></h2>
+        <div class="separador"></div>
+
+        <address class="contacto-datos">
+          <p>📍 <span>Calle Mayor, 42 — Madrid, España</span></p>
+          <p>📞 <a href="tel:+34910000000" title="Llamar al café">+34 910 000 000</a></p>
+          <p>✉️ <a href="mailto:hola@cafeorigen.es" title="Enviar correo">hola@cafeorigen.es</a></p>
+        </address>
+
+        <!-- Tabla pequeña de horarios (combinación de elementos) -->
+        <table class="tabla-horarios" aria-label="Horarios de apertura">
+          <caption>Horario de apertura</caption>
+          <tbody>
+            <tr><td>Lunes – Viernes</td><td><strong>08:00 – 21:00</strong></td></tr>
+            <tr><td>Sábado</td>         <td><strong>09:00 – 22:00</strong></td></tr>
+            <tr><td>Domingo</td>        <td><strong>10:00 – 18:00</strong></td></tr>
+          </tbody>
+        </table>
+
+      </div>
+
+      <!-- Columna del formulario -->
+      <div class="contacto-form-col">
+
+        <!-- Formulario con atributos method, action, novalidate (validación manual en JS) -->
+        <form
+          id="form-contacto"
+          class="formulario"
+          method="post"
+          action=""
+          novalidate
+          onsubmit="enviarFormulario(event)"
+          aria-label="Formulario de contacto"
+        >
+
+          <!-- Campo: nombre -->
+          <div class="campo-grupo">
+            <label for="nombre" class="campo-label">Nombre completo <span aria-hidden="true">*</span></label>
+            <input
+              type="text"
+              id="nombre"
+              name="nombre"
+              class="campo-input"
+              placeholder="Ej: Ana García"
+              required
+              minlength="2"
+              maxlength="60"
+              autocomplete="name"
+              aria-required="true"
+              onblur="validarCampo(this)"
+            />
+            <span class="campo-error" id="error-nombre" role="alert"></span>
+          </div>
+
+          <!-- Campo: email -->
+          <div class="campo-grupo">
+            <label for="email" class="campo-label">Correo electrónico <span aria-hidden="true">*</span></label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              class="campo-input"
+              placeholder="tu@correo.com"
+              required
+              autocomplete="email"
+              aria-required="true"
+              onblur="validarCampo(this)"
+            />
+            <span class="campo-error" id="error-email" role="alert"></span>
+          </div>
+
+          <!-- Campo: teléfono (no obligatorio) -->
+          <div class="campo-grupo">
+            <label for="telefono" class="campo-label">Teléfono</label>
+            <input
+              type="tel"
+              id="telefono"
+              name="telefono"
+              class="campo-input"
+              placeholder="+34 600 000 000"
+              pattern="[+\d\s\-]{7,15}"
+              autocomplete="tel"
+            />
+          </div>
+
+          <!-- Campo: asunto (select) -->
+          <div class="campo-grupo">
+            <label for="asunto" class="campo-label">Asunto <span aria-hidden="true">*</span></label>
+            <select
+              id="asunto"
+              name="asunto"
+              class="campo-input campo-select"
+              required
+              aria-required="true"
+              onchange="mostrarCampoExtra(this.value)"
+            >
+              <option value="" disabled selected>Selecciona un asunto…</option>
+              <option value="reserva">Reserva de mesa</option>
+              <option value="evento">Organizar un evento</option>
+              <option value="mayorista">Venta mayorista de café</option>
+              <option value="taller">Talleres y catas</option>
+              <option value="otro">Otro</option>
+            </select>
+          </div>
+
+          <!-- Campo condicional: número de personas (se muestra si asunto = reserva) -->
+          <div class="campo-grupo" id="campo-personas" style="display:none;">
+            <label for="personas" class="campo-label">Número de personas</label>
+            <input
+              type="number"
+              id="personas"
+              name="personas"
+              class="campo-input"
+              min="1"
+              max="20"
+              value="2"
+            />
+          </div>
+
+          <!-- Campo: mensaje (textarea) -->
+          <div class="campo-grupo">
+            <label for="mensaje" class="campo-label">Mensaje <span aria-hidden="true">*</span></label>
+            <textarea
+              id="mensaje"
+              name="mensaje"
+              class="campo-input campo-textarea"
+              rows="5"
+              cols="30"
+              placeholder="Cuéntanos en qué podemos ayudarte…"
+              required
+              minlength="10"
+              maxlength="500"
+              aria-required="true"
+              onblur="validarCampo(this)"
+            ></textarea>
+            <span class="campo-error" id="error-mensaje" role="alert"></span>
+            <!-- Contador de caracteres (evento oninput en main.js) -->
+            <small class="char-counter" id="contador-msg">0 / 500 caracteres</small>
+          </div>
+
+          <!-- Checkbox de política de privacidad -->
+          <div class="campo-grupo campo-check">
+            <label class="check-label">
+              <input
+                type="checkbox"
+                id="privacidad"
+                name="privacidad"
+                required
+                aria-required="true"
+              />
+              Acepto la
+              <!-- Enlace con href vacío (requisito) -->
+              <a href="" title="Leer política de privacidad" class="enlace-legal">
+                política de privacidad
+              </a>
+            </label>
+          </div>
+
+          <!-- Botón de envío -->
+          <button
+            type="submit"
+            id="btn-enviar"
+            class="btn btn-form"
+            aria-label="Enviar formulario de contacto"
+            onclick="this.setAttribute('data-clicked','true')"
+          >
+            <span id="btn-texto">Enviar mensaje</span>
+          </button>
+
+          <!-- Mensaje de confirmación oculto (se muestra con JS) -->
+          <div id="msg-exito" class="msg-exito" role="status" aria-live="polite" hidden>
+            ✅ ¡Mensaje enviado! Te contestaremos en menos de 24 h.
+          </div>
+
+        </form>
+
+      </div>
+    </div>
+
+  </section>
+  <!-- FIN FORMULARIO -->
+
+
+  <!-- =====================================================
+       FOOTER
+  ====================================================== -->
+  <footer class="footer" role="contentinfo">
+
+    <div class="footer-grid">
+
+      <!-- Columna 1: marca -->
+      <div class="footer-col">
+        <p class="footer-logo">☕ Café Origen</p>
+        <p class="footer-slogan">Especialidad y pasión<br />en cada taza desde 2018.</p>
+      </div>
+
+      <!-- Columna 2: enlaces rápidos (algunos con href vacío) -->
+      <nav class="footer-col" aria-label="Enlaces rápidos del pie de página">
+        <p class="footer-titulo-col">Navegación</p>
+        <ul class="footer-lista">
+          <li><a href="#inicio">Inicio</a></li>
+          <li><a href="#carta">Carta</a></li>
+          <li><a href="#galeria">Galería</a></li>
+          <li><a href="#contacto">Contacto</a></li>
+          <!-- Enlace con href vacío -->
+          <li><a href="">Política de cookies</a></li>
+          <li><a href="">Aviso legal</a></li>
+        </ul>
+      </nav>
+
+      <!-- Columna 3: redes sociales -->
+      <div class="footer-col">
+        <p class="footer-titulo-col">Síguenos</p>
+        <ul class="footer-lista footer-redes">
+          <li><a href="" title="Instagram de Café Origen" rel="noopener">Instagram</a></li>
+          <li><a href="" title="Facebook de Café Origen"  rel="noopener">Facebook</a></li>
+          <li><a href="" title="TikTok de Café Origen"    rel="noopener">TikTok</a></li>
+        </ul>
+      </div>
+
+    </div>
+
+    <!-- Copyright -->
+    <p class="footer-copy">
+      © <span id="anio-actual"></span> Café Origen · Todos los derechos reservados
+    </p>
+
+  </footer>
+  <!-- FIN FOOTER -->
+
+
+  <!-- Enlace al archivo JavaScript externo -->
+  <script src="main.js"></script>
+
+</body>
+</html>
